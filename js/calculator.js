@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const message = `Hello Vansh Fire Xcross Team!%0A%0AI used the Smart Fire Safety Coverage Calculator for my *${encodeURIComponent(facility)}* (Area: *${area} sq.ft.*).%0A%0A*Recommended Vansh Fire Xcross Package:*%0A• Vansh Xcross Classic (1.3kg): ${classic}%0A• Vansh Xcross Compact (400g): ${compact}%0A• Vansh Xcross Pro (Modular): ${pro}%0A%0APlease provide an official quotation and delivery timeline.`;
       
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=917014120007&text=${message}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=917878939493&text=${message}`;
       window.open(whatsappUrl, '_blank');
     });
   }

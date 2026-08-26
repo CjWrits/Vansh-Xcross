@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        window.open(`https://api.whatsapp.com/send?phone=917014120007&text=${msgEncoded}`, '_blank');
+        window.open(`https://api.whatsapp.com/send?phone=917878939493&text=${msgEncoded}`, '_blank');
       }, 1000);
     });
   }
