@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works | The Science of Vansh Fire Xcross Suppression Spheres</title>
+  <meta name="description" content="Discover how Vansh Fire Xcross works: pyrotechnic micro-fuse ignition, 360° monoammonium phosphate dispersion, acoustic alarm activation, and fire classes." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fireRed: '#E63946',
+            fireDarkRed: '#BA181B',
+            fireOrange: '#FF5E1E',
+            fireAmber: '#FF9F1C',
+            darkNavy: '#0A0F1D',
+            darkSlate: '#111827',
+            cardDark: '#162032',
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-darkNavy text-slate-100 font-body antialiased bg-grid-pattern selection:bg-rose-500 selection:text-white">
+
+  <!-- Sticky Glass Navigation -->
+  <header id="mainHeader" class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 p-0.5 shadow-lg shadow-rose-600/30 group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
+              <i class="fas fa-fire text-transparent bg-clip-text bg-gradient-to-tr from-rose-500 to-amber-400 text-2xl animate-flame"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-heading font-extrabold text-2xl tracking-tight text-white">VANSH</span>
+              <span class="font-heading font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500">XCROSS</span>
+            </div>
+            <p class="text-[10px] tracking-widest text-slate-400 uppercase font-mono">Fire Suppression Systems</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="products.html" class="hover:text-white transition">Products</a>
+          <a href="how-it-works.html" class="text-white font-semibold transition hover:text-orange-400">How It Works</a>
+          <a href="index.html#simulatorSection" class="hover:text-white transition">Simulator</a>
+          <a href="calculator.html" class="hover:text-white transition">Safety Calculator</a>
+          <a href="dealership.html" class="hover:text-white transition">Distributors</a>
+          <a href="about.html" class="hover:text-white transition">About</a>
+          <a href="contact.html" class="hover:text-white transition">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="contact.html" class="glow-btn-red px-5 py-2.5 rounded-xl text-white font-semibold text-sm flex items-center gap-2">
+            <span>Get Quote</span>
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 w-80 bg-slate-950 border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-fire text-rose-500 text-xl"></i>
+          <span class="font-heading font-bold text-lg text-white">Vansh Fire Xcross</span>
+        </div>
+        <button id="mobileMenuClose" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <nav class="mt-6 flex flex-col gap-4 text-base font-medium">
+        <a href="index.html" class="mobile-nav-link text-slate-300 py-1">Home</a>
+        <a href="products.html" class="mobile-nav-link text-slate-300 py-1">Products</a>
+        <a href="how-it-works.html" class="mobile-nav-link text-white py-1">How It Works</a>
+        <a href="calculator.html" class="mobile-nav-link text-slate-300 py-1">Safety Calculator</a>
+        <a href="dealership.html" class="mobile-nav-link text-slate-300 py-1">Dealership / Bulk</a>
+        <a href="about.html" class="mobile-nav-link text-slate-300 py-1">About Us</a>
+        <a href="contact.html" class="mobile-nav-link text-slate-300 py-1">Contact Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="pt-16 pb-12 bg-radial-gradient text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="badge-safety inline-block mb-3">Thermodynamic & Chemical Analysis</div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+        The Science Behind <span class="text-gradient-fire">360° Auto-Suppression</span>
+      </h1>
+      <p class="text-slate-300 mt-4 text-base sm:text-lg leading-relaxed">
+        Understand the precise thermodynamic triggers, dry chemical interruption, and acoustic alarm physics powering every Vansh Fire Xcross unit.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detailed Science Pillars -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Pillar 1: Thermal Micro-Fuse Activation -->
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 text-xs font-mono font-bold">
+            STAGE 1: INITIATION
+          </div>
+          <h2 class="text-3xl font-bold text-white">Pyrotechnic Micro-Fuse Ignition</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Unlike thermal glass bulb sprinklers that rely solely on ambient room heat buildup, Vansh Fire Xcross integrates high-speed pyrotechnic micro-fuses distributed across the circumference of the sphere.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> <strong>Trigger Mechanism:</strong> Direct contact with open flame (&gt;280°C).</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> <strong>Reaction Latency:</strong> 2.5 to 3.8 seconds from flame touch to burst.</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> <strong>Immunity to False Triggers:</strong> Safe against ambient summer heat (up to 85°C), sunlight, humidity, and mechanical drops.</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-6 bg-slate-900/80 rounded-2xl p-6 border border-slate-800 text-center">
+          <div class="w-20 h-20 rounded-2xl bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-3xl mx-auto mb-4">
+            <i class="fas fa-temperature-arrow-up animate-pulse"></i>
+          </div>
+          <div class="text-white font-bold text-lg">Thermal Trigger Matrix</div>
+          <div class="text-xs text-slate-400 mt-1">Self-activating without electricity, batteries, or wiring</div>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Chemical Extinguishing Mechanism (MAP 90%) -->
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 bg-slate-900/80 rounded-2xl p-6 border border-slate-800 text-center order-2 lg:order-1">
+          <div class="w-20 h-20 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 flex items-center justify-center text-3xl mx-auto mb-4">
+            <i class="fas fa-atom"></i>
+          </div>
+          <div class="text-white font-bold text-lg">Monoammonium Phosphate (NH₄H₂PO₄)</div>
+          <div class="text-xs text-slate-400 mt-1">90% Ultra-Fine Particle Dry Powder Formulation</div>
+        </div>
+        <div class="lg:col-span-6 space-y-4 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-mono font-bold">
+            STAGE 2: CHEMICAL CHAIN BREAK
+          </div>
+          <h2 class="text-3xl font-bold text-white">How MAP 90% Smothers the Fire</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            When the core detonates, the compressed ultra-fine ABC dry powder aerosolizes into a 360° spherical barrier:
+          </p>
+          <div class="space-y-3 text-xs text-slate-300">
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-white block mb-1">1. Free Radical Neutralization:</strong>
+              The phosphate radicals capture free hydrogen (H+) and hydroxyl (OH-) radicals in the flame, breaking the combustion chain instantly.
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-white block mb-1">2. Oxygen Starvation Blanket:</strong>
+              The powder creates a dense physical barrier between ambient oxygen (O₂) and the combustible fuel.
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-white block mb-1">3. Endothermic Cooling Effect:</strong>
+              Absorbs massive amounts of heat as it decomposes, cooling the burning base below its re-ignition flashpoint.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3: 120-138 dB Acoustic Warning Alarm -->
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-mono font-bold">
+            STAGE 3: OCCUPANT EVACUATION
+          </div>
+          <h2 class="text-3xl font-bold text-white">The 120+ dB Acoustic Alarm</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Most fatal residential fire casualties occur at night due to silent smoke inhalation while victims sleep. When Vansh Fire Xcross bursts, the controlled expansion creates a loud, resonant "pop" measured at <strong>120 dB to 138 dB</strong>.
+          </p>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            This sound wave serves as a life-saving warning siren, penetrating through closed doors to immediately awaken sleeping occupants and alert building security.
+          </p>
+        </div>
+        <div class="lg:col-span-6 bg-slate-900/80 rounded-2xl p-6 border border-slate-800 text-center">
+          <div class="w-20 h-20 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-3xl mx-auto mb-4">
+            <i class="fas fa-bullhorn animate-bounce"></i>
+          </div>
+          <div class="text-white font-bold text-2xl font-mono">128 dB</div>
+          <div class="text-xs text-slate-400 mt-1">Life-Saving Evacuation Warning</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fire Classifications Matrix -->
+  <section class="py-16 bg-slate-950/80 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl font-bold text-white">Fire Classification Compatibility</h2>
+        <p class="text-slate-300 text-sm mt-2">Vansh Fire Xcross is formulated to combat ABCD and Electrical hazards</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 font-black text-2xl flex items-center justify-center mx-auto mb-4">
+            A
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Class A: Combustibles</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Wood, paper, fabrics, cardboard, plastics, trash, and rubber tires.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-rose-500/20 text-rose-400 font-black text-2xl flex items-center justify-center mx-auto mb-4">
+            B
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Class B: Flammable Liquids</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Petrol, diesel, kerosene, paint thinners, industrial oils, and alcohol solvents.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 font-black text-2xl flex items-center justify-center mx-auto mb-4">
+            C
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Class C: Flammable Gases</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            LPG, CNG, methane, propane, butane, acetylene, and natural gas.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 font-black text-2xl flex items-center justify-center mx-auto mb-4">
+            E
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Class E: Electrical Hazards</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Short circuits, distribution boards, transformers, server racks, and inverters up to 5000V.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12 text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <div class="flex items-center justify-center gap-2">
+        <i class="fas fa-fire text-rose-500 text-lg"></i>
+        <span class="font-heading font-bold text-white text-base">VANSH FIRE XCROSS</span>
+      </div>
+      <p>© 2026 Vansh Fire Xcross. All Rights Reserved. Engineered with Pride in India.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
