@@ -1,5 +1,6 @@
 /* ==========================================================================
    Vansh Fire Xcross - Main Application Scripts
+   Authentic Light Design System & Interactive Handlers
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (mobileMenuBtn && mobileMenuDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenuDrawer.classList.remove('translate-x-full');
     });
   }
@@ -21,20 +23,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Close when clicking outside drawer
+  document.addEventListener('click', (e) => {
+    if (mobileMenuDrawer && !mobileMenuDrawer.contains(e.target) && mobileMenuBtn && !mobileMenuBtn.contains(e.target)) {
+      mobileMenuDrawer.classList.add('translate-x-full');
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuDrawer) {
+      mobileMenuDrawer.classList.add('translate-x-full');
+    }
+  });
+
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (mobileMenuDrawer) mobileMenuDrawer.classList.add('translate-x-full');
     });
   });
 
-  // 2. Navbar Scroll Glass Elevation
+  // 2. Navbar Scroll Glass Elevation (Clean Light)
   const headerNav = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => {
     if (headerNav) {
-      if (window.scrollY > 40) {
-        headerNav.classList.add('shadow-2xl', 'border-b', 'border-rose-950/40', 'bg-slate-950/95');
+      if (window.scrollY > 30) {
+        headerNav.classList.add('shadow-md', 'bg-white/98');
       } else {
-        headerNav.classList.remove('shadow-2xl', 'bg-slate-950/95');
+        headerNav.classList.remove('shadow-md', 'bg-white/98');
       }
     }
   });
@@ -47,18 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       // Remove active from all
       productFilterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-gradient-to-r', 'from-rose-600', 'to-orange-500', 'text-white');
-        b.classList.add('text-slate-400', 'hover:text-white');
+        b.classList.remove('active', 'bg-fireRed', 'text-white');
+        b.classList.add('text-slate-600', 'hover:text-slate-900');
       });
 
       // Add active to current
-      btn.classList.add('active', 'bg-gradient-to-r', 'from-rose-600', 'to-orange-500', 'text-white');
-      btn.classList.remove('text-slate-400', 'hover:text-white');
+      btn.classList.add('active', 'bg-fireRed', 'text-white');
+      btn.classList.remove('text-slate-600', 'hover:text-slate-900');
 
       const filterCategory = btn.getAttribute('data-filter');
 
       productCards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
+        const cardCat = card.getAttribute('data-category') || '';
         if (filterCategory === 'all' || cardCat.includes(filterCategory)) {
           card.classList.remove('hidden');
           card.classList.add('animate-fade-in');
@@ -69,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. FAQ Accordion
-  const faqItems = document.querySelectorAll('.faq-item');
+  // 4. FAQ Accordion (Supports both light and standard classnames)
+  const faqItems = document.querySelectorAll('.faq-item, .faq-item-light');
   faqItems.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
     if (trigger) {
@@ -93,8 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   deployTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      deployTabs.forEach(t => t.classList.remove('active', 'border-rose-500', 'bg-rose-500/20', 'text-white'));
-      tab.classList.add('active', 'border-rose-500', 'bg-rose-500/20', 'text-white');
+      deployTabs.forEach(t => {
+        t.classList.remove('active', 'bg-white', 'text-fireRed', 'shadow-sm', 'border-slate-200');
+        t.classList.add('text-slate-600');
+      });
+      tab.classList.add('active', 'bg-white', 'text-fireRed', 'shadow-sm', 'border', 'border-slate-200');
+      tab.classList.remove('text-slate-600');
 
       const target = tab.getAttribute('data-deploy-target');
       if (target === 'passive') {
@@ -107,33 +127,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Interactive 3D Fireball Preview Sphere Mouse Rotation
-  const ball3D = document.getElementById('interactiveHeroBall');
+  // 6. Interactive 3D Fireball Preview Sphere Mouse Rotation (Subtle 3D Effect)
+  const ball3D = document.querySelector('.product-hero-image');
   if (ball3D) {
     document.addEventListener('mousemove', (e) => {
       const rect = ball3D.getBoundingClientRect();
       const ballCenterX = rect.left + rect.width / 2;
       const ballCenterY = rect.top + rect.height / 2;
       
-      const deltaX = (e.clientX - ballCenterX) / 25;
-      const deltaY = (e.clientY - ballCenterY) / 25;
+      const deltaX = (e.clientX - ballCenterX) / 45;
+      const deltaY = (e.clientY - ballCenterY) / 45;
 
-      ball3D.style.transform = `perspective(1000px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
+      ball3D.style.transform = `perspective(800px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
     });
   }
 
   // 7. Contact / Dealership Form Handler with WhatsApp Integration
-  const leadForm = document.getElementById('dealershipEnquiryForm');
+  const leadForm = document.getElementById('dealershipEnquiryForm') || document.getElementById('contactForm');
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      const name = document.getElementById('leadName')?.value || 'Valued Partner';
-      const phone = document.getElementById('leadPhone')?.value || '';
-      const email = document.getElementById('leadEmail')?.value || '';
-      const city = document.getElementById('leadCity')?.value || '';
-      const inquiryType = document.getElementById('leadInquiryType')?.value || 'Bulk Purchase';
-      const message = document.getElementById('leadMessage')?.value || '';
+      const name = document.getElementById('leadName')?.value || document.getElementById('contactName')?.value || 'Valued Partner';
+      const phone = document.getElementById('leadPhone')?.value || document.getElementById('contactPhone')?.value || '';
+      const email = document.getElementById('leadEmail')?.value || document.getElementById('contactEmail')?.value || '';
+      const city = document.getElementById('leadCity')?.value || document.getElementById('contactCity')?.value || '';
+      const inquiryType = document.getElementById('leadInquiryType')?.value || document.getElementById('contactSubject')?.value || 'Bulk Purchase';
+      const message = document.getElementById('leadMessage')?.value || document.getElementById('contactMessage')?.value || '';
 
       const msgEncoded = `*New Inquiry via Vansh Fire Xcross Portal*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*City/State:* ${encodeURIComponent(city)}%0A*Interest:* ${encodeURIComponent(inquiryType)}%0A*Requirements:* ${encodeURIComponent(message)}`;
 
@@ -142,37 +162,37 @@ document.addEventListener('DOMContentLoaded', () => {
       if (formFeedback) {
         formFeedback.classList.remove('hidden');
         formFeedback.innerHTML = `
-          <div class="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm">
-            <i class="fas fa-check-circle mr-2"></i> Thank you, <strong>${name}</strong>! Your inquiry has been registered. Redirecting to WhatsApp for instant priority assistance...
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-sm">
+            <i class="fas fa-check-circle mr-2 text-emerald-600"></i> Thank you, <strong>${name}</strong>! Your inquiry has been registered. Connecting to WhatsApp support...
           </div>
         `;
       }
 
       setTimeout(() => {
-        window.open(`https://api.whatsapp.com/send?phone=919876543210&text=${msgEncoded}`, '_blank');
-      }, 1200);
+        window.open(`https://api.whatsapp.com/send?phone=917014120007&text=${msgEncoded}`, '_blank');
+      }, 1000);
     });
   }
 
   // 8. Datasheet Downloader Simulation
   window.downloadDatasheet = function(modelName) {
     const alertModal = document.createElement('div');
-    alertModal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4';
+    alertModal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4';
     alertModal.innerHTML = `
-      <div class="bg-slate-900 border border-rose-500/40 rounded-2xl p-6 max-w-md w-full shadow-2xl animate-fade-in text-center">
-        <div class="w-16 h-16 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-file-pdf text-2xl text-rose-400"></i>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 max-w-md w-full shadow-2xl animate-fade-in text-center">
+        <div class="w-16 h-16 rounded-full bg-red-100 border border-red-200 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-file-pdf text-2xl text-fireRed"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-2">Technical Datasheet</h3>
-        <p class="text-sm text-slate-300 mb-6">
-          Downloading official engineering specifications & MSDS for <strong>${modelName}</strong>.
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Technical Datasheet</h3>
+        <p class="text-sm text-slate-600 mb-6">
+          Engineering specifications & MSDS for <strong>${modelName}</strong>.
         </p>
         <div class="flex items-center justify-center gap-3">
-          <button onclick="this.closest('.fixed').remove()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition">
+          <button onclick="this.closest('.fixed').remove()" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition">
             Close
           </button>
-          <a href="assets/vansh-fire-xcross-datasheet.pdf" download="${modelName}-Specs.pdf" onclick="this.closest('.fixed').remove()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-orange-500 text-white text-sm font-semibold shadow-lg hover:shadow-rose-500/30 transition">
-            Download PDF
+          <a href="assets/pamphlet.jpeg" download="${modelName}-Specifications.jpeg" onclick="this.closest('.fixed').remove()" class="btn-primary-red px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md">
+            Download Spec Sheet
           </a>
         </div>
       </div>
@@ -180,3 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(alertModal);
   };
 });
+
+// Image Lightbox Functions
+window.openImageModal = function(imageSrc, captionText) {
+  const modal = document.getElementById('imageLightboxModal');
+  const img = document.getElementById('lightboxImage');
+  const caption = document.getElementById('lightboxCaption');
+  if (modal && img) {
+    img.src = imageSrc;
+    if (caption) caption.textContent = captionText || 'Product Preview';
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeImageModal = function() {
+  const modal = document.getElementById('imageLightboxModal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+};
+

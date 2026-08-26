@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (outCoverageDescEl) {
       outCoverageDescEl.innerHTML = `
-        <div class="text-xs text-slate-400 space-y-1">
-          <p><i class="fas fa-shield-alt text-emerald-400 mr-1.5"></i> <strong>Strategic Placement:</strong> Mount 15–30 cm directly above ${hazardCount > 0 ? 'selected electrical & gas hazard points' : 'primary high-risk zones'}.</p>
-          <p><i class="fas fa-check-circle text-amber-400 mr-1.5"></i> <strong>Radial Span:</strong> 360° instantaneous ABC dry chemical envelope covering ~${(classicUnits * 8.5).toFixed(1)} m² perimeter.</p>
-          <p><i class="fas fa-calendar-check text-cyan-400 mr-1.5"></i> <strong>5-Year Warranty:</strong> 100% Maintenance-free autonomous readiness.</p>
+        <div class="text-xs text-slate-600 space-y-1.5">
+          <p><i class="fas fa-shield-alt text-emerald-600 mr-1.5"></i> <strong>Strategic Placement:</strong> Mount 15–30 cm directly above ${hazardCount > 0 ? 'selected electrical & gas hazard points' : 'primary high-risk zones'}.</p>
+          <p><i class="fas fa-check-circle text-amber-600 mr-1.5"></i> <strong>Radial Span:</strong> 360° instantaneous ABC dry chemical envelope covering ~${(classicUnits * 8.5).toFixed(1)} m² perimeter.</p>
+          <p><i class="fas fa-calendar-check text-blue-600 mr-1.5"></i> <strong>5-Year Warranty:</strong> 100% Maintenance-free autonomous readiness.</p>
         </div>
       `;
     }
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const message = `Hello Vansh Fire Xcross Team!%0A%0AI used the Smart Fire Safety Coverage Calculator for my *${encodeURIComponent(facility)}* (Area: *${area} sq.ft.*).%0A%0A*Recommended Vansh Fire Xcross Package:*%0A• Vansh Xcross Classic (1.3kg): ${classic}%0A• Vansh Xcross Compact (400g): ${compact}%0A• Vansh Xcross Pro (Modular): ${pro}%0A%0APlease provide an official quotation and delivery timeline.`;
       
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=919876543210&text=${message}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=917014120007&text=${message}`;
       window.open(whatsappUrl, '_blank');
     });
   }

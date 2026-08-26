@@ -3,23 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us & Support | Vansh Fire Xcross</title>
+  <title>Contact Us & Support | Vansh Industries - Fire Xcross™</title>
   <meta name="description" content="Contact Vansh Fire Xcross for product inquiries, bulk orders, institutional quotes, and dealership support. Pan-India sales and customer service." />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            fireRed: '#E63946',
+            fireRed: '#D90429',
             fireDarkRed: '#BA181B',
-            fireOrange: '#FF5E1E',
-            fireAmber: '#FF9F1C',
-            darkNavy: '#0A0F1D',
-            darkSlate: '#111827',
-            cardDark: '#162032',
+            fireOrange: '#EA580C',
+            fireAmber: '#D97706',
           },
           fontFamily: {
             heading: ['Outfit', 'sans-serif'],
@@ -34,47 +30,107 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="bg-darkNavy text-slate-100 font-body antialiased bg-grid-pattern selection:bg-rose-500 selection:text-white">
+<body class="bg-[#F8FAFC] text-slate-800 font-body antialiased selection:bg-rose-500 selection:text-white">
 
-  <!-- Sticky Glass Navigation -->
-  <header id="mainHeader" class="sticky top-0 z-40 glass-nav transition-all duration-300">
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-fireDarkRed via-fireOrange to-fireRed text-white text-xs font-semibold py-2 px-4 shadow-sm relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="bg-white/20 text-white px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-bold">Direct Desk</span>
+        <span>🔥 <strong>Vansh Industries Customer Desk</strong>: Fast Dispatch Across All Indian States</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <a href="dealership.html" class="underline hover:text-amber-200 transition font-medium">Become a Distributor</a>
+        <span class="opacity-60">|</span>
+        <a href="tel:+917014120007" class="hover:text-amber-200 transition font-medium"><i class="fas fa-phone-alt mr-1"></i> +91 70141 20007</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Glass Navigation Header (Clean & Spacious) -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 p-0.5 shadow-lg shadow-rose-600/30 group-hover:scale-105 transition-transform">
-            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
-              <i class="fas fa-fire text-transparent bg-clip-text bg-gradient-to-tr from-rose-500 to-amber-400 text-2xl animate-flame"></i>
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-red-600 via-orange-500 to-amber-400 p-0.5 shadow-md group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+              <i class="fas fa-fire text-red-600 text-xl"></i>
             </div>
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="font-heading font-extrabold text-2xl tracking-tight text-white">VANSH</span>
-              <span class="font-heading font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500">XCROSS</span>
+              <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900">VANSH</span>
+              <span class="font-heading font-extrabold text-2xl tracking-tight text-fireRed">XCROSS</span>
             </div>
-            <p class="text-[10px] tracking-widest text-slate-400 uppercase font-mono">Fire Suppression Systems</p>
+            <p class="text-[10px] tracking-widest text-slate-500 uppercase font-mono font-semibold">Fire Safety Systems</p>
           </div>
         </a>
 
-        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-          <a href="index.html" class="hover:text-white transition">Home</a>
-          <a href="products.html" class="hover:text-white transition">Products</a>
-          <a href="how-it-works.html" class="hover:text-white transition">How It Works</a>
-          <a href="index.html#simulatorSection" class="hover:text-white transition">Simulator</a>
-          <a href="calculator.html" class="hover:text-white transition">Safety Calculator</a>
-          <a href="dealership.html" class="hover:text-white transition">Distributors</a>
-          <a href="about.html" class="hover:text-white transition">About</a>
-          <a href="contact.html" class="text-white font-semibold transition hover:text-orange-400">Contact</a>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
+          <a href="index.html" class="nav-link-item">Home</a>
+          <a href="products.html" class="nav-link-item">Products</a>
+          
+          <!-- Technology Dropdown -->
+          <div class="nav-dropdown">
+            <a href="how-it-works.html" class="nav-link-item cursor-pointer">
+              <span>Technology</span>
+              <i class="fas fa-chevron-down text-[10px] text-slate-400"></i>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="how-it-works.html" class="nav-dropdown-item">
+                <div class="w-8 h-8 rounded-lg bg-red-100 text-fireRed flex items-center justify-center shrink-0">
+                  <i class="fas fa-atom text-xs"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">How It Works</div>
+                  <div class="text-[10px] text-slate-500 font-normal">360° MAP powder & micro-fuse</div>
+                </div>
+              </a>
+              <a href="index.html#videoShowcase" class="nav-dropdown-item">
+                <div class="w-8 h-8 rounded-lg bg-orange-100 text-fireOrange flex items-center justify-center shrink-0">
+                  <i class="fas fa-play text-xs"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                    <span>Live Test Videos</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+                  </div>
+                  <div class="text-[10px] text-slate-500 font-normal">Real fire extinguishing footage</div>
+                </div>
+              </a>
+              <a href="index.html#simulatorSection" class="nav-dropdown-item">
+                <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                  <i class="fas fa-gamepad text-xs"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Interactive Simulator</div>
+                  <div class="text-[10px] text-slate-500 font-normal">Test passive vs throw deployment</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="calculator.html" class="nav-link-item">Safety Calculator</a>
+          <a href="dealership.html" class="nav-link-item">Distributors</a>
+          <a href="about.html" class="nav-link-item">About Us</a>
+          <a href="contact.html" class="nav-link-item active">Contact</a>
         </nav>
 
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="tel:+919876543210" class="glow-btn-red px-5 py-2.5 rounded-xl text-white font-semibold text-sm flex items-center gap-2">
+        <!-- Right Side Contact & CTA -->
+        <div class="hidden lg:flex items-center gap-3.5 shrink-0">
+          <a href="https://api.whatsapp.com/send?phone=917014120007" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp text-lg"></i>
+          </a>
+          <a href="tel:+917014120007" class="btn-primary-red px-5 py-2.5 rounded-xl text-white font-semibold text-sm flex items-center gap-2 shadow-md">
             <i class="fas fa-phone-alt text-xs"></i>
-            <span>+91 98765 43210</span>
+            <span>+91 70141 20007</span>
           </a>
         </div>
 
-        <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center">
+        <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -82,44 +138,77 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 w-80 bg-slate-950 border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 p-6 flex flex-col justify-between">
+  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-white border-l border-slate-200 z-50 transform translate-x-full transition-transform duration-300 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
     <div>
-      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
-        <div class="flex items-center gap-2">
-          <i class="fas fa-fire text-rose-500 text-xl"></i>
-          <span class="font-heading font-bold text-lg text-white">Vansh Fire Xcross</span>
+      <div class="flex items-center justify-between pb-5 border-b border-slate-200">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white text-sm">
+            <i class="fas fa-fire"></i>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-slate-900">VANSH XCROSS</span>
+            <p class="text-[9px] text-slate-500 font-mono">Fire Safety Systems</p>
+          </div>
         </div>
-        <button id="mobileMenuClose" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center">
+        <button id="mobileMenuClose" class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 hover:text-slate-900 flex items-center justify-center">
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <nav class="mt-6 flex flex-col gap-4 text-base font-medium">
-        <a href="index.html" class="mobile-nav-link text-slate-300 py-1">Home</a>
-        <a href="products.html" class="mobile-nav-link text-slate-300 py-1">Products</a>
-        <a href="how-it-works.html" class="mobile-nav-link text-slate-300 py-1">How It Works</a>
-        <a href="calculator.html" class="mobile-nav-link text-slate-300 py-1">Safety Calculator</a>
-        <a href="dealership.html" class="mobile-nav-link text-slate-300 py-1">Dealership / Bulk</a>
-        <a href="about.html" class="mobile-nav-link text-slate-300 py-1">About Us</a>
-        <a href="contact.html" class="mobile-nav-link text-white py-1">Contact Support</a>
+      <nav class="mt-6 flex flex-col gap-1 text-sm font-semibold">
+        <a href="index.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-home w-5 text-slate-400"></i> Home
+        </a>
+        <a href="products.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-fire-extinguisher w-5 text-slate-400"></i> Products Catalog
+        </a>
+        <a href="how-it-works.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-atom w-5 text-slate-400"></i> How It Works
+        </a>
+        <a href="index.html#videoShowcase" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-play-circle w-5 text-slate-400"></i> Live Test Videos
+        </a>
+        <a href="index.html#simulatorSection" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-gamepad w-5 text-slate-400"></i> Fire Simulator
+        </a>
+        <a href="calculator.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-calculator w-5 text-slate-400"></i> Safety Calculator
+        </a>
+        <a href="dealership.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-handshake w-5 text-slate-400"></i> Distributorship
+        </a>
+        <a href="about.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50">
+          <i class="fas fa-building w-5 text-slate-400"></i> About Us
+        </a>
+        <a href="contact.html" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-fireRed bg-red-50 font-bold">
+          <i class="fas fa-headset w-5 text-fireRed"></i> Contact Support
+        </a>
       </nav>
+    </div>
+    <div class="pt-6 border-t border-slate-200 space-y-2.5">
+      <a href="https://api.whatsapp.com/send?phone=917014120007" target="_blank" class="w-full btn-whatsapp py-3 rounded-xl text-white font-bold text-center flex items-center justify-center gap-2 text-sm shadow-md">
+        <i class="fab fa-whatsapp text-lg"></i> WhatsApp +91 70141 20007
+      </a>
+      <a href="tel:+917014120007" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 font-semibold text-xs text-center flex items-center justify-center gap-2">
+        <i class="fas fa-phone-alt text-fireRed"></i> Call +91 70141 20007
+      </a>
     </div>
   </div>
 
   <!-- Page Header -->
-  <section class="pt-16 pb-12 bg-radial-gradient text-center">
+  <section class="pt-16 pb-12 bg-hero-light text-center border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="badge-safety inline-block mb-3">Direct Support & Inquiries</div>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-        Connect With <span class="text-gradient-fire">Vansh Fire Xcross</span>
+      <div class="badge-safety-light inline-block mb-3">Direct Support & Inquiries</div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Connect With <span class="text-gradient-fire">Vansh Industries</span>
       </h1>
-      <p class="text-slate-300 mt-4 text-base sm:text-lg leading-relaxed">
-        Reach out to our technical engineering consultants, dispatch team, or distributor desk for fast, priority assistance.
+      <p class="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed">
+        Reach out to our technical fire safety team, dispatch desk, or distributor sales managers for instant quotes and support.
       </p>
     </div>
   </section>
 
-  <!-- Contact Details & Form Grid -->
-  <section class="py-16">
+  <!-- Contact Details & Form Grid (Clean Light Theme) -->
+  <section class="py-16 bg-[#F8FAFC]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -127,87 +216,87 @@
         <!-- Left: Contact Details Cards -->
         <div class="lg:col-span-5 space-y-6">
           
-          <div class="glass-panel rounded-2xl p-6 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl shrink-0">
+          <div class="light-card p-6 flex items-start gap-4 shadow-md">
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-fireRed flex items-center justify-center text-xl shrink-0 border border-red-200">
               <i class="fas fa-phone-volume"></i>
             </div>
             <div>
-              <div class="text-xs text-slate-400 uppercase font-mono">Customer Helpline</div>
-              <div class="text-base font-bold text-white mt-0.5">+91 98765 43210</div>
-              <p class="text-xs text-slate-400 mt-1">Monday – Saturday: 9:00 AM to 7:00 PM IST</p>
+              <div class="text-xs text-slate-500 uppercase font-mono font-bold">Official Calling Helpline</div>
+              <div class="text-base font-bold text-slate-900 mt-0.5">+91 70141 20007</div>
+              <p class="text-xs text-slate-500 mt-1">Monday – Saturday: 9:00 AM to 8:00 PM IST</p>
             </div>
           </div>
 
-          <div class="glass-panel rounded-2xl p-6 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+          <div class="light-card p-6 flex items-start gap-4 shadow-md">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0 border border-emerald-200">
               <i class="fab fa-whatsapp"></i>
             </div>
             <div>
-              <div class="text-xs text-slate-400 uppercase font-mono">Instant WhatsApp Support</div>
-              <div class="text-base font-bold text-emerald-400 mt-0.5">Direct Chat Available 24/7</div>
-              <a href="https://api.whatsapp.com/send?phone=919876543210" target="_blank" class="inline-block mt-2 text-xs font-semibold text-emerald-300 underline hover:text-emerald-200">
+              <div class="text-xs text-slate-500 uppercase font-mono font-bold">Direct WhatsApp Support</div>
+              <div class="text-base font-bold text-emerald-700 mt-0.5">+91 70141 20007</div>
+              <a href="https://api.whatsapp.com/send?phone=917014120007" target="_blank" class="inline-block mt-2 text-xs font-semibold text-emerald-600 underline hover:text-emerald-700">
                 Click here to start chat &rarr;
               </a>
             </div>
           </div>
 
-          <div class="glass-panel rounded-2xl p-6 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <div class="text-xs text-slate-400 uppercase font-mono">Email Inquiries</div>
-              <div class="text-base font-bold text-white mt-0.5">info@vanshfirexcross.com</div>
-              <p class="text-xs text-slate-400 mt-1">Official RFQs & Tender Documentation</p>
-            </div>
-          </div>
-
-          <div class="glass-panel rounded-2xl p-6 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+          <div class="light-card p-6 flex items-start gap-4 shadow-md">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl shrink-0 border border-blue-200">
               <i class="fas fa-location-dot"></i>
             </div>
             <div>
-              <div class="text-xs text-slate-400 uppercase font-mono">Corporate & Manufacturing Hub</div>
-              <div class="text-sm font-bold text-white mt-0.5">Vansh Fire Xcross Industrial Complex</div>
-              <p class="text-xs text-slate-400 mt-1">Industrial Area, State-of-the-art Manufacturing Facility, India.</p>
+              <div class="text-xs text-slate-500 uppercase font-mono font-bold">Corporate & Registered Office</div>
+              <div class="text-sm font-bold text-slate-900 mt-0.5">Vansh Industries / Jatan Communication</div>
+              <p class="text-xs text-slate-600 mt-1">19 Bank Colony, Rai Ka Bagh, Jodhpur, Rajasthan, India.</p>
+            </div>
+          </div>
+
+          <div class="light-card p-6 flex items-start gap-4 shadow-md">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0 border border-amber-200">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase font-mono font-bold">Quality Standard & Approvals</div>
+              <div class="text-sm font-bold text-slate-900 mt-0.5">AN ISO 9001:2015 Certified Company</div>
+              <p class="text-xs text-slate-600 mt-1">Approved by Govt. of India • CE & LAPC Compliant</p>
             </div>
           </div>
 
         </div>
 
         <!-- Right: Inquiry Form -->
-        <div class="lg:col-span-7 glass-panel rounded-3xl p-8 border border-rose-500/30 shadow-2xl">
-          <h2 class="text-2xl font-bold text-white mb-2">Send an Official Message</h2>
-          <p class="text-xs text-slate-400 mb-6">Our fire safety technical engineers will reply within 2 working hours.</p>
+        <div class="lg:col-span-7 light-card rounded-3xl p-8 border border-slate-200 shadow-xl bg-white">
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Send an Official Inquiry</h2>
+          <p class="text-xs text-slate-600 mb-6">Our fire safety technical engineers will reply via WhatsApp or call promptly.</p>
 
           <div id="formFeedbackMsg" class="hidden mb-4"></div>
 
           <form id="dealershipEnquiryForm" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name *</label>
-                <input type="text" id="leadName" required placeholder="Full Name" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition" />
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                <input type="text" id="leadName" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number (WhatsApp) *</label>
-                <input type="tel" id="leadPhone" required placeholder="+91 98765 43210" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition" />
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number (WhatsApp) *</label>
+                <input type="tel" id="leadPhone" required placeholder="+91 70141 20007" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-                <input type="email" id="leadEmail" required placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition" />
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
+                <input type="email" id="leadEmail" required placeholder="name@company.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1">City / Region *</label>
-                <input type="text" id="leadCity" required placeholder="e.g. Pune / Mumbai" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition" />
+                <label class="block text-xs font-semibold text-slate-700 mb-1">City / State *</label>
+                <input type="text" id="leadCity" required placeholder="e.g. Jodhpur, Rajasthan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Subject / Inquiry Type *</label>
-              <select id="leadInquiryType" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition">
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Subject / Inquiry Type *</label>
+              <select id="leadInquiryType" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition">
                 <option value="Product Purchase & Quotation">Product Purchase & Quotation</option>
                 <option value="Distributorship / Reseller Opportunity">Distributorship / Reseller Opportunity</option>
                 <option value="Commercial / Industrial Site Safety Audit">Commercial / Industrial Site Safety Audit</option>
@@ -216,11 +305,11 @@
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1">Message / Requirements</label>
-              <textarea id="leadMessage" rows="4" placeholder="How can we assist you with fire safety today?" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500 transition"></textarea>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Message / Requirements</label>
+              <textarea id="leadMessage" rows="4" placeholder="How can we assist you with fire safety today?" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-fireRed transition"></textarea>
             </div>
 
-            <button type="submit" class="w-full glow-btn-red py-3.5 rounded-xl text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+            <button type="submit" class="w-full btn-primary-red py-3.5 rounded-xl text-white font-bold text-sm shadow-md flex items-center justify-center gap-2">
               <span>Send Message & Connect on WhatsApp</span>
               <i class="fas fa-paper-plane text-xs"></i>
             </button>
@@ -232,14 +321,15 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12 text-center">
+  <!-- Clean Human Footer -->
+  <footer class="bg-slate-900 text-slate-300 text-xs py-12 text-center">
     <div class="max-w-7xl mx-auto px-4 space-y-4">
       <div class="flex items-center justify-center gap-2">
-        <i class="fas fa-fire text-rose-500 text-lg"></i>
-        <span class="font-heading font-bold text-white text-base">VANSH FIRE XCROSS</span>
+        <i class="fas fa-fire text-fireRed text-lg"></i>
+        <span class="font-heading font-bold text-white text-base">VANSH INDUSTRIES • FIRE XCROSS™</span>
       </div>
-      <p>© 2026 Vansh Fire Xcross. All Rights Reserved. Engineered with Pride in India.</p>
+      <p class="text-slate-400">19 Bank Colony, Rai Ka Bagh, Jodhpur, Rajasthan, India • Phone: +91 70141 20007</p>
+      <p class="text-slate-500">© 2026 Vansh Industries. All Rights Reserved. Engineered with Pride in India.</p>
     </div>
   </footer>
 
