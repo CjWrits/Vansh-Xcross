@@ -1,12 +1,6 @@
-/* ==========================================================================
-   Vansh Industries - Fire Xcross™ Design System
-   Authentic Human-Crafted Light Engineering & Fire Safety Portal
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* Brand Colors */
   --fire-red: #D90429;
   --fire-red-dark: #BA181B;
   --fire-red-light: #EF233C;
@@ -14,21 +8,18 @@
   --fire-amber: #D97706;
   --fire-gold: #F59E0B;
   
-  /* Light Theme Neutrals */
   --bg-primary: #FFFFFF;
   --bg-secondary: #F8FAFC;
   --bg-tertiary: #F1F5F9;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F8FAFC;
   
-  /* Text Colors */
   --text-dark: #0F172A;
   --text-heading: #1E293B;
   --text-body: #334155;
   --text-muted: #64748B;
   --text-light: #94A3B8;
   
-  /* Borders & Shadows */
   --border-light: #E2E8F0;
   --border-subtle: #CBD5E1;
   --border-focus: #EF4444;
@@ -37,18 +28,15 @@
   --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.10), 0 6px 16px -4px rgba(15, 23, 42, 0.05);
   --shadow-red: 0 10px 25px -5px rgba(217, 4, 41, 0.30);
   
-  /* Accents */
   --accent-emerald: #059669;
   --accent-blue: #0284C7;
   
-  /* Radii */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
   
-  /* Fonts */
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-heading: 'Outfit', sans-serif;
   --font-mono: 'Space Grotesk', monospace;
@@ -77,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -92,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--fire-red);
 }
 
-/* Background Patterns & Textures */
+/* Background utilities */
 .bg-grid-subtle {
   background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -106,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
-/* Cards & Elevation */
+/* Cards */
 .light-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
@@ -128,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--border-light);
 }
 
-/* Modern Spacious Navigation */
+/* Navigation */
 .nav-link-item {
   position: relative;
   font-size: 0.875rem;
@@ -164,7 +152,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Nav Dropdown Menu */
 .nav-dropdown {
   position: relative;
 }
@@ -213,8 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(3px);
 }
 
-
-/* Text Gradients */
+/* Gradients */
 .text-gradient-fire {
   background: linear-gradient(135deg, #D90429 0%, #EA580C 50%, #D97706 100%);
   -webkit-background-clip: text;
@@ -300,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-full);
 }
 
-/* Product Hero Visual & Pedestal */
+/* Product Hero visuals */
 .product-hero-container {
   position: relative;
   display: flex;
@@ -329,7 +315,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-8px) scale(1.03);
 }
 
-/* Pulse animation for live indicators */
 @keyframes soft-pulse {
   0%, 100% {
     transform: scale(1);
@@ -345,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: soft-pulse 2.5s ease-in-out infinite;
 }
 
-/* Video Player Container Styling */
+/* Video player wrapper */
 .video-card-container {
   position: relative;
   border-radius: var(--radius-lg);
@@ -362,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* Custom Interactive Simulation Canvas in Light Mode */
+/* Simulation Canvas */
 #simulationCanvas {
   background: #0F172A;
   border-radius: var(--radius-lg);
@@ -371,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: crosshair;
 }
 
-/* Tab active styles */
+/* Tabs */
 .tab-btn-light {
   background: #F1F5F9;
   color: #475569;
@@ -386,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 12px rgba(217, 4, 41, 0.25);
 }
 
-/* FAQ Accordion Styling */
+/* FAQ Accordion */
 .faq-content-light {
   max-height: 0;
   overflow: hidden;
@@ -403,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--fire-red);
 }
 
-/* Range slider styling */
+/* Slider Controls */
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;
@@ -429,7 +414,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   transform: scale(1.2);
 }
 
-/* Image zoom & lightbox overlay */
+/* Media Cards */
 .media-preview-card {
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -447,7 +432,6 @@ input[type=range]::-webkit-slider-thumb:hover {
   transform: scale(1.03);
 }
 
-/* Fade in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -457,7 +441,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   animation: fadeIn 0.35s ease forwards;
 }
 
-/* Light Table styling */
+/* Tables */
 .table-light th {
   background-color: #F8FAFC;
   color: #334155;
@@ -471,3 +455,4 @@ input[type=range]::-webkit-slider-thumb:hover {
 .table-light tr:hover td {
   background-color: #F8FAFC;
 }
+

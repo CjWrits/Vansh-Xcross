@@ -1,6 +1,6 @@
-/* ==========================================================================
-   Vansh Fire Xcross - Interactive Physics & Particle Fire Extinguisher Simulator
-   ========================================================================== */
+/**
+ * Interactive canvas fire suppression physics simulation
+ */
 
 class FireballSimulator {
   constructor(canvasId) {
@@ -10,8 +10,8 @@ class FireballSimulator {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
 
-    this.mode = 'passive'; // 'passive' or 'active'
-    this.state = 'idle'; // 'idle', 'burning', 'igniting', 'exploding', 'extinguished'
+    this.mode = 'passive'; // 'passive' | 'active'
+    this.state = 'idle'; // 'idle' | 'burning' | 'throwing' | 'igniting' | 'exploding' | 'extinguished'
     
     this.ball = {
       x: this.width / 2,
@@ -21,7 +21,7 @@ class FireballSimulator {
       radius: 28,
       isMounted: true,
       igniteTimer: 0,
-      maxIgniteTime: 60 // ~1 second visual fuse burn
+      maxIgniteTime: 60
     };
 
     this.fireParticles = [];
@@ -88,7 +88,7 @@ class FireballSimulator {
       });
     }
 
-    // Canvas click interaction
+    // Direct canvas click handler
     this.canvas.addEventListener('click', (e) => {
       const rect = this.canvas.getBoundingClientRect();
       const clickX = (e.clientX - rect.left) * (this.width / rect.width);
@@ -96,7 +96,7 @@ class FireballSimulator {
       
       if (this.state === 'idle') {
         this.triggerFire();
-      } else if (this.mode === 'active' && (this.state === 'burning')) {
+      } else if (this.mode === 'active' && this.state === 'burning') {
         this.throwBallAt(clickX, clickY);
       }
     });
@@ -121,8 +121,8 @@ class FireballSimulator {
 
   initAudio() {
     if (!this.audioCtx && typeof window.AudioContext !== 'undefined') {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      this.audioCtx = new AudioCtx();
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      this.audioCtx = new AudioContextClass();
     }
     if (this.audioCtx && this.audioCtx.state === 'suspended') {
       this.audioCtx.resume();
@@ -135,7 +135,7 @@ class FireballSimulator {
       this.initAudio();
       if (!this.audioCtx) return;
 
-      // Burst / Pop sound
+      // Burst sound
       const osc = this.audioCtx.createOscillator();
       const gain = this.audioCtx.createGain();
       const filter = this.audioCtx.createBiquadFilter();
@@ -157,7 +157,7 @@ class FireballSimulator {
       osc.start();
       osc.stop(this.audioCtx.currentTime + 0.4);
 
-      // Powder dispersion whoosh
+      // Powder dispersion noise
       const bufferSize = this.audioCtx.sampleRate * 0.5;
       const noiseBuffer = this.audioCtx.createBuffer(1, bufferSize, this.audioCtx.sampleRate);
       const output = noiseBuffer.getChannelData(0);
@@ -175,8 +175,8 @@ class FireballSimulator {
       whiteNoise.connect(noiseGain);
       noiseGain.connect(this.audioCtx.destination);
       whiteNoise.start();
-    } catch (e) {
-      console.log('Audio autoplay blocked or unsupported');
+    } catch {
+      // Audio playback unavailable or blocked by browser policy
     }
   }
 
@@ -229,7 +229,6 @@ class FireballSimulator {
     this.playAlarmSound();
     this.updateStatusUI('BOOM! 128 dB Warning Alarm triggered! Monoammonium Phosphate ABC powder deployed 360°!', 'burst', 128);
 
-    // Shockwave ring
     this.shockwaves.push({
       x: this.ball.x,
       y: this.ball.y,
@@ -239,7 +238,6 @@ class FireballSimulator {
       speed: 8
     });
 
-    // 250 Powder particles (White / light cyan ABC dry powder)
     for (let i = 0; i < 280; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = Math.random() * 8 + 2;
@@ -288,7 +286,6 @@ class FireballSimulator {
   }
 
   update() {
-    // Generate fire particles if burning
     if (this.state === 'burning' || this.state === 'throwing' || this.state === 'igniting') {
       const fireBaseX = this.width / 2;
       const fireBaseY = 320;
@@ -307,7 +304,6 @@ class FireballSimulator {
       }
     }
 
-    // Update fire particles
     for (let i = this.fireParticles.length - 1; i >= 0; i--) {
       const p = this.fireParticles[i];
       p.x += p.vx;
@@ -315,7 +311,6 @@ class FireballSimulator {
       p.radius *= 0.96;
       p.life -= p.decay;
 
-      // Check contact with ball in passive mode
       if (this.mode === 'passive' && this.state === 'burning') {
         const dist = Math.hypot(p.x - this.ball.x, p.y - this.ball.y);
         if (dist < this.ball.radius + 10) {
@@ -329,7 +324,6 @@ class FireballSimulator {
       }
     }
 
-    // Handle Active throwing movement
     if (this.state === 'throwing') {
       const dx = this.ball.targetX - this.ball.x;
       const dy = this.ball.targetY - this.ball.y;
@@ -343,15 +337,13 @@ class FireballSimulator {
       }
     }
 
-    // Ball ignition timer
     if (this.state === 'igniting') {
       this.ball.igniteTimer++;
-      if (this.ball.igniteTimer >= 45) { // trigger explosion
+      if (this.ball.igniteTimer >= 45) {
         this.explode();
       }
     }
 
-    // Update shockwaves
     for (let i = this.shockwaves.length - 1; i >= 0; i--) {
       const sw = this.shockwaves[i];
       sw.radius += sw.speed;
@@ -361,12 +353,11 @@ class FireballSimulator {
       }
     }
 
-    // Update powder particles
     for (let i = this.powderParticles.length - 1; i >= 0; i--) {
       const p = this.powderParticles[i];
       p.x += p.vx;
       p.y += p.vy;
-      p.vx *= 0.94; // friction
+      p.vx *= 0.94;
       p.vy *= 0.94;
       p.life -= p.decay;
       if (p.life <= 0) {
@@ -377,22 +368,14 @@ class FireballSimulator {
 
   draw() {
     this.ctx.clearRect(0, 0, this.width, this.height);
-
-    // Draw Hazard Backdrop (Kitchen stove / Electrical panel schematics)
     this.drawEnvironment();
-
-    // Draw Fire Particles
     this.drawFire();
-
-    // Draw Shockwaves
     this.drawShockwaves();
 
-    // Draw Vansh Xcross Fireball
     if (this.state !== 'extinguished' && this.state !== 'exploding') {
       this.drawBall();
     }
 
-    // Draw ABC Powder Cloud
     this.drawPowder();
   }
 
@@ -400,11 +383,11 @@ class FireballSimulator {
     const ctx = this.ctx;
     const groundY = 330;
 
-    // Platform / Floor
+    // Platform floor
     ctx.fillStyle = '#111928';
     ctx.fillRect(0, groundY, this.width, this.height - groundY);
 
-    // Border line
+    // Floor line
     ctx.strokeStyle = '#28354D';
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -412,7 +395,7 @@ class FireballSimulator {
     ctx.lineTo(this.width, groundY);
     ctx.stroke();
 
-    // Hazard appliance (Electrical Cabinet / Stove)
+    // Hazard equipment chassis
     const baseW = 180;
     const baseH = 80;
     const baseX = this.width / 2 - baseW / 2;
@@ -426,14 +409,13 @@ class FireballSimulator {
     ctx.fill();
     ctx.stroke();
 
-    // Label on hazard box
     ctx.fillStyle = '#64748B';
     ctx.font = '10px "Space Grotesk", monospace';
     ctx.textAlign = 'center';
     ctx.fillText('HIGH-RISK HAZARD ZONE', this.width / 2, baseY + 25);
     ctx.fillText('[ 415V 3-PHASE / FLAMMABLE VAPORS ]', this.width / 2, baseY + 42);
 
-    // Hazard Caution Stripes
+    // Warning stripe
     ctx.strokeStyle = '#EAB308';
     ctx.lineWidth = 3;
     ctx.beginPath();
@@ -441,12 +423,11 @@ class FireballSimulator {
     ctx.lineTo(baseX + baseW - 15, baseY + 58);
     ctx.stroke();
 
-    // In passive mode, draw mounting cradle bracket
+    // Passive mounting bracket
     if (this.mode === 'passive') {
       const mountX = this.width / 2;
       const mountY = 150;
 
-      // Ceiling / Wall Mount
       ctx.strokeStyle = '#475569';
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -454,14 +435,12 @@ class FireballSimulator {
       ctx.lineTo(mountX, mountY - 32);
       ctx.stroke();
 
-      // Circular metallic cradle holding the ball
       ctx.strokeStyle = '#94A3B8';
       ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.arc(mountX, mountY, 32, 0.2 * Math.PI, 0.8 * Math.PI, false);
       ctx.stroke();
 
-      // Bracket label
       ctx.fillStyle = '#00F0FF';
       ctx.font = '9px "Space Grotesk", sans-serif';
       ctx.fillText('VANSH QUICK-RELEASE MOUNT', mountX, mountY - 38);
@@ -497,7 +476,6 @@ class FireballSimulator {
     const ctx = this.ctx;
     const b = this.ball;
 
-    // Glowing ignition effect if primed
     if (this.state === 'igniting') {
       ctx.save();
       ctx.shadowColor = '#FF5E1E';
@@ -510,7 +488,6 @@ class FireballSimulator {
       ctx.restore();
     }
 
-    // Outer Sphere - High Visibility Fire Safety Red
     const grad = ctx.createRadialGradient(
       b.x - b.radius * 0.35, 
       b.y - b.radius * 0.35, 
@@ -529,14 +506,12 @@ class FireballSimulator {
     ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
     ctx.fill();
 
-    // Sphere Highlight & Ring
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
     ctx.stroke();
 
-    // Brand "X" Cross Graphic on Ball
     ctx.strokeStyle = '#FFD166';
     ctx.lineWidth = 3.5;
     ctx.beginPath();
@@ -546,19 +521,16 @@ class FireballSimulator {
     ctx.lineTo(b.x - 10, b.y + 10);
     ctx.stroke();
 
-    // Central Brand Dot
     ctx.fillStyle = '#FFFFFF';
     ctx.beginPath();
     ctx.arc(b.x, b.y, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    // Label
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 8px "Outfit", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('VANSH XCROSS', b.x, b.y + b.radius + 14);
 
-    // Micro-fuse wick
     if (this.state === 'igniting') {
       ctx.fillStyle = '#FF9F1C';
       for (let i = 0; i < 4; i++) {
