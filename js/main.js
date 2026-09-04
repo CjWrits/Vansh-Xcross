@@ -1,5 +1,5 @@
 /**
- * Vansh Fire Xcross - Main UI Scripts
+ * Vansh Fire XROSS - Main UI Scripts
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('leadMessage')?.value || document.getElementById('contactMessage')?.value || '';
 
       const lines = [
-        '*New Inquiry via Vansh Fire Xcross Website*',
+        '*New Inquiry via Vansh Fire XROSS Website*',
         '',
         `*Name:* ${name}`,
         `*Phone:* ${phone}`,
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        window.open(`https://api.whatsapp.com/send?phone=917878939493&text=${encoded}`, '_blank');
+        window.open(`https://api.whatsapp.com/send?phone=918302550902&text=${encoded}`, '_blank');
       }, 800);
     });
   }

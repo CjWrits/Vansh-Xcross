@@ -529,7 +529,7 @@ class FireballSimulator {
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 8px "Outfit", sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('VANSH XCROSS', b.x, b.y + b.radius + 14);
+    ctx.fillText('VANSH XROSS', b.x, b.y + b.radius + 14);
 
     if (this.state === 'igniting') {
       ctx.fillStyle = '#FF9F1C';

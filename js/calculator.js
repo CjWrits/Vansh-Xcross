@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const pro = outProEl ? outProEl.textContent : '0';
 
       const lines = [
-        'Hello Vansh Fire Xcross Team,',
+        'Hello Vansh Fire XROSS Team,',
         '',
         `I configured safety coverage on your website calculator for *${facility}* (${area} sq.ft.).`,
         '',
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Please send me official pricing and delivery lead time.'
       ];
 
-      const url = `https://api.whatsapp.com/send?phone=917878939493&text=${encodeURIComponent(lines.join('\n'))}`;
+      const url = `https://api.whatsapp.com/send?phone=918302550902&text=${encodeURIComponent(lines.join('\n'))}`;
       window.open(url, '_blank');
     });
   }

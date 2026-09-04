@@ -70,10 +70,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #e1a754;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #ab3636;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
